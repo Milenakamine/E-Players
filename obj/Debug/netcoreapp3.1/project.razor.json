@@ -20536,6 +20536,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\milen\\OneDrive\\Área de Trabalho\\Estudos do SENAI\\Projetos\\E-Players\\E-Playes\\Views\\Equipe\\Index.cshtml",
+      "TargetPath": "Views\\Equipe\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\milen\\OneDrive\\Área de Trabalho\\Estudos do SENAI\\Projetos\\E-Players\\E-Playes\\Views\\Shared\\_Layout.cshtml",
       "TargetPath": "Views\\Shared\\_Layout.cshtml",
       "FileKind": "mvc"
