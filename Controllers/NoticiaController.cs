@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using E_Playes.Models;
 using Microsoft.AspNetCore.Http;
 using System.IO;
@@ -13,23 +14,24 @@ namespace E_Playes.Controllers
 {
     public class NoticiaController : Controller
     {
-        Noticia noticiaModel=new Noticia();
+       Noticia noticiaModel = new Noticia();
 
         public IActionResult Index()
         {
-            ViewBag.Noticias= noticiaModel.ReadAll();
+            ViewBag.Noticias = noticiaModel.ReadAll();
             return View();
         }
         
         public IActionResult Cadastrar(IFormCollection form)
         {
-            Noticia novaNoticia   = new Noticia();
-            novaNoticia.IdNoticia = Int32.Parse(form["IdNoticia"]);
-            novaNoticia.Titulo   = form["Titulo"];
-            novaNoticia.Texto = form["Texto"];
+            Noticia novaNoticia  = new Noticia();
+            novaNoticia .IdNoticia = Int32.Parse(form["IdEquipe"]);
+            novaNoticia .Titulo    = form["Nome"];
+            novaNoticia .Texto    = form["Texto"];
+
             //Upload de imagem
             var file    = form.Files[0];
-            var folder  = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/img/Noticias");
+             var folder  = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/img/Noticias");
 
             if(file != null)
             {
@@ -62,7 +64,6 @@ namespace E_Playes.Controllers
             noticiaModel.Delete(id);
             return LocalRedirect("~/Noticia");
         }
-
 
     }
 }

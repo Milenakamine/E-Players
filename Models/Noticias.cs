@@ -34,10 +34,10 @@ namespace E_Playes.Models
             return $"{n.IdNoticia};{n.Titulo};{n.Texto};{n.Imagem}";
         }
 
-        public void Delete(int IdNoticia)
+        public void Delete(int IdNoticias)
         {
            List<string> linhas = ReadAllLinesCSV(PATH);
-            linhas.RemoveAll(y => y.Split(";")[0] == IdNoticia.ToString());
+            linhas.RemoveAll(y => y.Split(";")[0] == IdNoticias.ToString());
 
             RewriteCSV(PATH, linhas );
         }
@@ -66,6 +66,11 @@ namespace E_Playes.Models
             linhas.RemoveAll(h => h.Split(";")[0] == n.IdNoticia.ToString());
             linhas.Add(PrepararLinha(n));
             RewriteCSV(PATH, linhas );
+
+
+
         }
+
+        
     }
 }

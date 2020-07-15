@@ -5,8 +5,8 @@
 
 <form action="@Url.Action("Cadastrar")" method="post" enctype="multipart/form-data">
 
-<label for="IdNoticia">IdNoticia</label>
-<input type="text" name="IdNoticia" id="IdNoticia">
+<label for="IdNoticia">IdNoticias</label>
+<input type="text" name="IdNoticias" id="IdNoticias">
 
  <label for="Titulo">Título</label>
 <input type="text" name="Titulo" id="Titulo">
@@ -17,7 +17,7 @@
 <label for="Imagem">Imagem</label>
 <input type="file" name="Imagem" id="Imagem">
 
-<button type="submit">Cadastrar</button>
+<button type="submit">Ver Noticias</button>
 
 </form>
 
@@ -37,8 +37,8 @@
                 <td>@item.IdNoticia</td>
                 <td>@item.Titulo</td>
                 <td>@item.Texto</td>
-                <td><img src="img/Noticia/@item.Imagem" alt="Imagem da Notícia @item.Noticia" width="40"></td>
-                <td><a asp-area="" asp-controller="Notícia" asp-action="Excluir" asp-route-id="@item.IdNoticia">Excluir</a></td>
+                <td><img src="img/Noticia/@item.Imagem" alt="Imagem da Notícia @item.Titulo" width="40"></td>0
+                <td><a asp-area="" asp-controller="Noticia" asp-action="Excluir" asp-route-id="@item.IdNoticias">Excluir</a></td>
             </tr>
         }
     </tbody>
