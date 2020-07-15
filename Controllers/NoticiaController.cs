@@ -11,24 +11,25 @@ using System.IO;
 
 namespace E_Playes.Controllers
 {
-    public class EquipeController : Controller
+    public class NoticiaController : Controller
     {
-         Equipe equipeModel = new Equipe();
+        Noticia noticiaModel=new Noticia();
 
         public IActionResult Index()
         {
-            ViewBag.Equipes = equipeModel.ReadAll();
+            ViewBag.Noticias= noticiaModel.ReadAll();
             return View();
         }
         
         public IActionResult Cadastrar(IFormCollection form)
         {
-            Equipe novaEquipe   = new Equipe();
-            novaEquipe.IdEquipe = Int32.Parse(form["IdEquipe"]);
-            novaEquipe.Nome     = form["Nome"];
+            Noticia novaNoticia   = new Noticia();
+            novaNoticia.IdNoticia = Int32.Parse(form["IdNoticia"]);
+            novaNoticia.Titulo   = form["Titulo"];
+            novaNoticia.Texto = form["Texto"];
             //Upload de imagem
             var file    = form.Files[0];
-            var folder  = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/img/Equipes");
+            var folder  = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/img/Noticias");
 
             if(file != null)
             {
@@ -41,25 +42,27 @@ namespace E_Playes.Controllers
                 {  
                     file.CopyTo(stream);  
                 }
-                novaEquipe.Imagem   = file.FileName;
+                novaNoticia.Imagem   = file.FileName;
             }
             else
             {
-                novaEquipe.Imagem   = "padrao.png";
+                novaNoticia.Imagem   = "padrao.png";
             }
 
             //Fim de Upload
 
-            equipeModel.Create(novaEquipe);            
+            noticiaModel.Create(novaNoticia);            
 
-            return LocalRedirect("~/Equipe");
+            return LocalRedirect("~/Noticia");
         }
 
-        [Route("Equipe/{id}")]
+        [Route("Noticia/{id}")]
         public IActionResult Excluir(int id)
         {
-            equipeModel.Delete(id);
-            return LocalRedirect("~/Equipe");
+            noticiaModel.Delete(id);
+            return LocalRedirect("~/Noticia");
         }
+
+
     }
 }
