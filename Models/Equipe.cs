@@ -7,7 +7,7 @@ namespace E_Playes.Models
 {
     public class Equipe : EplayersBase , IEquipe
     {
-        public int IdEquipe { get; set; }
+        public int IdEquipes { get; set; }
 
         public string Nome { get; set; }
 
@@ -31,7 +31,7 @@ namespace E_Playes.Models
         private string PrepararLinha(Equipe e)
         {
 
-            return $"{e.IdEquipe}; {e.Nome}; {e.Imagem}";
+            return $"{e.IdEquipes};{e.Nome};{e.Imagem}";
         }
 
         public void Delete(int IdEquipe)
@@ -50,7 +50,7 @@ namespace E_Playes.Models
             {
                 string[] linha = item.Split(";");
                 Equipe equipe = new Equipe();
-                equipe.IdEquipe = Int32.Parse(linha[0]);
+                equipe.IdEquipes = Int32.Parse(linha[0]);
                 equipe.Nome = linha[1];
                 equipe.Imagem = linha[2];
 
@@ -62,7 +62,7 @@ namespace E_Playes.Models
         public void Update(Equipe e)
         {
             List<string> linhas = ReadAllLinesCSV(PATH);
-            linhas.RemoveAll(y => y.Split(";")[0] == e.IdEquipe.ToString());
+            linhas.RemoveAll(y => y.Split(";")[0] == e.IdEquipes.ToString());
             linhas.Add(PrepararLinha(e));
             RewriteCSV(PATH, linhas );
         }

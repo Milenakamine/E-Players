@@ -25,8 +25,8 @@ namespace E_Playes.Controllers
         public IActionResult Cadastrar(IFormCollection form)
         {
             Noticia novaNoticia  = new Noticia();
-            novaNoticia .IdNoticia = Int32.Parse(form["IdEquipe"]);
-            novaNoticia .Titulo    = form["Nome"];
+            novaNoticia .IdNoticias = Int32.Parse(form["IdNoticias"]);
+            novaNoticia .Titulo    = form["Titulo"];
             novaNoticia .Texto    = form["Texto"];
 
             //Upload de imagem

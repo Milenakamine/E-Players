@@ -24,7 +24,7 @@ namespace E_Playes.Controllers
         public IActionResult Cadastrar(IFormCollection form)
         {
             Equipe novaEquipe   = new Equipe();
-            novaEquipe.IdEquipe = Int32.Parse(form["IdEquipe"]);
+            novaEquipe.IdEquipes = Int32.Parse(form["IdEquipes"]);
             novaEquipe.Nome     = form["Nome"];
             //Upload de imagem
             var file    = form.Files[0];

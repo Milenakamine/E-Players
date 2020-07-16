@@ -7,7 +7,7 @@ namespace E_Playes.Models
 {
     public class Noticia : EplayersBase , INoticia
     {
-        public int IdNoticia { get; set; }
+        public int IdNoticias { get; set; }
 
         public string Titulo { get; set; }
 
@@ -31,7 +31,7 @@ namespace E_Playes.Models
         private string PrepararLinha(Noticia n)
         {
 
-            return $"{n.IdNoticia};{n.Titulo};{n.Texto};{n.Imagem}";
+            return $"{n.IdNoticias};{n.Titulo};{n.Texto};{n.Imagem}";
         }
 
         public void Delete(int IdNoticias)
@@ -50,7 +50,7 @@ namespace E_Playes.Models
             {
                 string[] linha = item.Split(";");
                 Noticia noticia = new Noticia();
-                noticia.IdNoticia = Int32.Parse(linha[0]);
+                noticia.IdNoticias = Int32.Parse(linha[0]);
                 noticia.Titulo = linha[1];
                 noticia.Texto = linha [2];
                 noticia.Imagem = linha[3];
@@ -63,7 +63,7 @@ namespace E_Playes.Models
         public void Update(Noticia n)
         {
             List<string> linhas = ReadAllLinesCSV(PATH);
-            linhas.RemoveAll(h => h.Split(";")[0] == n.IdNoticia.ToString());
+            linhas.RemoveAll(h => h.Split(";")[0] == n.IdNoticias.ToString());
             linhas.Add(PrepararLinha(n));
             RewriteCSV(PATH, linhas );
 

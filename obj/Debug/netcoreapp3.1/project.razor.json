@@ -20559,11 +20559,6 @@
       "FilePath": "c:\\Users\\milen\\OneDrive\\Área de Trabalho\\Estudos do SENAI\\Projetos\\E-Players\\E-Playes\\Views\\Noticia\\Index.cshtml",
       "TargetPath": "Views\\Noticia\\Index.cshtml",
       "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\milen\\OneDrive\\Área de Trabalho\\Estudos do SENAI\\Projetos\\E-Players\\E-Playes\\Views\\Home\\Privacy.cshtml",
-      "TargetPath": "Views\\Home\\Privacy.cshtml",
-      "FileKind": "mvc"
     }
   ],
   "SerializationFormat": "0.2"
